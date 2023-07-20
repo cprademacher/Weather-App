@@ -3,6 +3,32 @@
     padding: 0;
 }
 
-header {
-    
+#header {
+    height: 10%;
+    overflow: hidden;
+}
+
+.header-color {
+    background: linear-gradient(45deg,rgb(56, 102, 207), purple);
+    color: white;
+}
+
+main {
+    margin-top: 58px;
+}
+
+.blue {
+    background-color: blue;
+    height: 100%;
+    width: 100%;
+}
+
+.red {
+    background-color: red;
+    width: 100%;
+    height: 100%;
+}
+
+#citySearchLabel {
+    text-align: left;
 }
