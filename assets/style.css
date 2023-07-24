@@ -13,10 +13,6 @@
     color: white;
 }
 
-h1 {
-    font-size: 32px;
-}
-
 main {
     margin-top: 58px;
 }
@@ -35,4 +31,30 @@ main {
 
 #citySearchLabel {
     text-align: left;
+}
+
+#current-weather {
+    width: 85%;
+    height: 200px;
+    border: 1px solid black;
+    margin-top: 10px;
+}
+
+#five-day-forecast {
+    width: 85%;
+    height: 300px;
+    margin-top: 10px;
+}
+
+.forecast-days {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 80%
+}
+
+.forecast-day {
+    height: 90%;
+    width: 120px;
+    border: 1px solid black;
 }
