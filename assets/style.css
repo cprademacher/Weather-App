@@ -17,10 +17,25 @@ main {
     margin-top: 58px;
 }
 
+#submit-button {
+    width: 100%;
+    margin-top: 10px;
+    background-color: lightskyblue;
+    border-radius: 3px 3px 3px 3px;
+    border: none;
+    padding: 2px 0;
+}
+
 .blue {
-    background-color: blue;
+    background-color: whitesmoke;
     height: 100%;
     width: 100%;
+}
+
+hr {
+    height: 1px;
+    background: black;
+    opacity: 1;
 }
 
 .red {

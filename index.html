@@ -21,12 +21,15 @@
     <main>
         <div class="container-fluid vh-100">
             <div class="row">
-              <div class="col-4 blue vh-100">
+              <div class="col-3 blue vh-100">
                 <div id="searchSection" class="mb-3 search">
+                  <form>
                     <label id="citySearchLabel" for="citySearchBar" class="form-label fs-4 fw-semibold">Search for a City:</label>
-                    <textarea placeholder="Search for a City" id="citySearchBar" class="form-control" rows="1"></textarea>
+                    <input type="text" placeholder="Search for a City" id="citySearchBar" class="form-control" required></input>
+                    <input id="submit-button" type="submit" value="Search"></input>
+                  </form>
                   </div>
-
+                  <hr>
                   <div>
                     <ul>
                       <li id="latEl"></li>
@@ -34,7 +37,7 @@
                     </ul>
                   </div>
               </div>
-              <div class="col-8 red vh-100">
+              <div class="col-9 red vh-100">
                 <div id="current-weather">
                   <h3>City (Today's Date) Weather Icon</h3>
                   <p>Temp: </p>
