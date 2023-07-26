@@ -8,7 +8,7 @@ var todaysTempEl = document.getElementById('todays-temp');
 var todaysWindEl = document.getElementById('todays-wind');
 var todaysWeatherIconEl = document.getElementById('todays-icon');
 var submitButton = document.getElementById('submit-button');
-
+var cityEl = document.getElementById('city');
 
 //The below function takes in degrees kelvin and returns it in Fehrenheit
 function kelvinToFahrenheit(kelvin) {
@@ -69,6 +69,7 @@ function inputResults() {
     var inputValue = document.getElementById('city-search-bar').value;
     cityName = inputValue.toString();
     weatherUrlByCity = 'http://api.openweathermap.org/geo/1.0/direct?q=' + cityName + '&limit=1&appid=' + apiKey;
+    cityEl.innerHTML = cityName;
 }
 
 // The below code waits for a button click and changes the current city to what
