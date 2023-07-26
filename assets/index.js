@@ -3,6 +3,16 @@ var lat;
 var lon;
 let cityName = 'Austin';
 var weatherUrlByCity = 'http://api.openweathermap.org/geo/1.0/direct?q=' + cityName + '&limit=1&appid=' + apiKey;
+var todaysHumidityEl = document.getElementById('todays-humidity');
+var todaysTempEl = document.getElementById('todays-temp');
+var todaysWindEl = document.getElementById('todays-wind');
+var todaysWeatherIconEl = document.getElementById('todays-icon');
+
+//The below function takes in degrees kelvin and returns it in Fehrenheit
+function kelvinToFahrenheit(kelvin) {
+    var fahrenheit = Math.round((kelvin - 273.15) * 9/5 + 32);
+    return fahrenheit;
+  }
 
 //The request city url function will take the user's input city and get the lattitude and longitude of that 
 //city from the api request.  It will then pass those lat and lon into the weatherUrl parameters to then
@@ -39,7 +49,15 @@ function getWeather(requestWeatherUrl) {
             return response.json();
         }
     }).then(function(data) {
-        console.log(data);
+        var todaysHumidity = data.list[0].main.humidity;
+        var todaysTemp =  kelvinToFahrenheit(data.list[0].main.temp);
+        var todaysWind = data.list[0].wind.speed;
+        var todaysIcon = data.list[0].weather[0].icon;
+        console.log(todaysIcon);
+        todaysHumidityEl.innerHTML = 'Humidity: ' + todaysHumidity + '%';
+        todaysTempEl.innerHTML = 'Temp: ' + todaysTemp + ' F';
+        todaysWindEl.innerHTML = 'Wind: ' + todaysWind + 'MPH';
+        todaysWeatherIconEl.innerHTML = todaysIcon;
     })
 }
 
