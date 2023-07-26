@@ -7,6 +7,8 @@ var todaysHumidityEl = document.getElementById('todays-humidity');
 var todaysTempEl = document.getElementById('todays-temp');
 var todaysWindEl = document.getElementById('todays-wind');
 var todaysWeatherIconEl = document.getElementById('todays-icon');
+var submitButton = document.getElementById('submit-button');
+
 
 //The below function takes in degrees kelvin and returns it in Fehrenheit
 function kelvinToFahrenheit(kelvin) {
@@ -61,4 +63,27 @@ function getWeather(requestWeatherUrl) {
     })
 }
 
-getLatLon(weatherUrlByCity);
+// getLatLon(weatherUrlByCity);
+
+function inputResults() {
+    var inputValue = document.getElementById('city-search-bar').value;
+    cityName = inputValue.toString();
+    weatherUrlByCity = 'http://api.openweathermap.org/geo/1.0/direct?q=' + cityName + '&limit=1&appid=' + apiKey;
+}
+
+// The below code waits for a button click and changes the current city to what
+// the user inputs and pull the weather for that city to populate the browser.
+// It then clears the input in the form again.
+submitButton.addEventListener('click', function(event) {
+    event.preventDefault();
+
+    inputResults();
+    getLatLon(weatherUrlByCity);
+})
+
+
+// Need to do:
+// Find out how to actually post the icon to the page from the icon pulled from the API
+// Find future dates in api call and post them to the Five Day Forecast section.
+// Add dayjs to pull in today's date.
+// Append each city the user inputs into a list below the form so a user can click on it again.
