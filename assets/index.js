@@ -172,7 +172,7 @@ function getForecast(requestForecastUrl) {
 function inputResults() {
     var inputValue = document.getElementById('city-search-bar').value;
     cityName = inputValue.toString();
-    weatherUrlByCity = 'http://api.openweathermap.org/geo/1.0/direct?q=' + cityName + '&limit=1&appid=' + apiKey;
+    weatherUrlByCity = 'https://api.openweathermap.org/geo/1.0/direct?q=' + cityName + '&limit=1&appid=' + apiKey;
     cityEl.innerHTML = cityName;
 }
 
